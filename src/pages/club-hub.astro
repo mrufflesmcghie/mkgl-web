@@ -12,8 +12,8 @@ import Layout from '../layouts/AboutTheme.astro';
 <h1> Useful Links & FAQ's</h1>
 </hr>
 <ul> 
--  | <a href="https://fulltime.thefa.com/home/index.html"> FA Full Time </a>
--  | <a href="https://clubs.thefa.com"> FA Club Portal </a>
+<li><a href="https://fulltime.thefa.com/home/index.html"> FA Full Time </a></li>
+<li><a href="https://clubs.thefa.com"> FA Club Portal </a></li>
 </ul>
 
 	</p>
@@ -39,6 +39,13 @@ import Layout from '../layouts/AboutTheme.astro';
 					<slot />
 				</div>
 			</article>
+			<article><form action="/action_page.php">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" value="John"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+  <input type="submit" value="Submit">
+</form></article>
 	<p>
 		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
 		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
