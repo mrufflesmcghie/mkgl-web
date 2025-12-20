@@ -7,6 +7,7 @@
 :root {
 	--accent: #2dddb1;
 	--accent-dark: #000d8a;
+	--accent-secondary: #2dddb1;
 	--black: 15, 18, 25;
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
@@ -79,10 +80,10 @@ b {
 	font-weight: 700;
 }
 a {
-	color: #959595;
+	color: #ff66c4
 }
 a:hover {
-	color: #959595;
+	color: #ff66c4;
 }
 p {
 	margin-bottom: 1em;
