@@ -2,7 +2,7 @@
 title: "League Statement - Dec 25"
 description: "League Management Committee Statement - Dec 25"
 pubDate: "Dec 19 2025"
-heroImage: "/web_announcement.png"
+heroImage: "/images/web_announcement.png"
 ---
 
 Dear Member Clubs,
