@@ -2,7 +2,7 @@
 title: "League Statement - Dec 25"
 description: "League Management Committee Statement - Dec 25"
 pubDate: "Dec 19 2025"
-heroImage: "/MILTON KEYNES & NORTH BUCKS GIRLS LEAGUE_20251220_114157_0000.png"
+heroImage: "/web_announcement.png"
 ---
 
 Dear Member Clubs,
