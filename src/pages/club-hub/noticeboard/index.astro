@@ -1,12 +1,13 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import BaseHead from '../../../components/BaseHead.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../../consts';
 import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
+import FormattedDate from '../../../components/FormattedDate.astro';
+import StickyNotes from '../../../components/StickyNotes.astro';
 
-const posts = (await getCollection('clubHub')).sort(
+const posts = (await getCollection('stickynotes')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---
@@ -89,7 +90,7 @@ const posts = (await getCollection('clubHub')).sort(
 		<Header />
 		<main>
 		<section style="align-items:center;"> 
-		<h1> Welcome to the MKGL Club Hub </h1>
+		<h1> MKGL CLUB NOTICEBOARD </h1>
 		<hr>
 
 		
@@ -97,18 +98,7 @@ const posts = (await getCollection('clubHub')).sort(
 			<section>
 				<ul>
 					{
-						posts.map((post) => (
-							<li>
-								<a href={`/club-hub/${post.id}/`}>
-									<img width={720} height={250} src={post.data.heroImage} alt="" />
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
-					}
+						<StickyNotes />
 				</ul>
 			</section>
 		</main>

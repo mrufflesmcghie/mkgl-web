@@ -1,0 +1,29 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import { SITE_TITLE } from '../consts';
+import FormattedDate from './FormattedDate.astro'
+
+	import { getCollection } from 'astro:content';
+const posts = (await getCollection('stickynotes')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+<style> <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"></style>
+{
+posts.map((post) => (
+							
+							<div class="card border-dark mb-3" style="max-width: 18rem;">
+  <div class="card-header"><span class="badge rounded-pill text-bg-info">Players Wanted</span> Header</div>
+  <div class="card-body">
+    <h5 class="card-title">Primary card title</h5>
+    <p class="card-text">{post.data.message}</p>
+	<div class="card-footer">
+		<p class="date">
+										<FormattedDate date={post.data.pubDate} />
+									</p>
+	</div>
+  </div>
+</div>
+						))
+					}
+

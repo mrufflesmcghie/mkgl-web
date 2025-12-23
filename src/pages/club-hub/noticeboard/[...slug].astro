@@ -1,21 +1,21 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
-import NewsPost from '../../layouts/NewsPost.astro';
+import NewsPost from '../../../layouts/stickyNotes.astro';
 import { render } from 'astro:content';
 
 export async function getStaticPaths() {
-	const posts = await getCollection('clubHub');
+	const posts = await getCollection('stickynotes');
 	return posts.map((post) => ({
 		params: { slug: post.id },
 		props: post,
 	}));
 }
-type Props = CollectionEntry<'clubHub'>;
+type Props = CollectionEntry<'stickynotes'>;
 
 const post = Astro.props;
 const { Content } = await render(post);
 ---
 
-<NewsPost {...post.data}>
+<stickyNotes {...post.data}>
 	<Content />
-</NewsPost>
+</stickyNotes>
