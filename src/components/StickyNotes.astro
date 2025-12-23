@@ -8,22 +8,39 @@ const posts = (await getCollection('stickynotes')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---
-<style> <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"></style>
+<style>
+    .card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 5px; /* 5px rounded corners */
+  padding: 5px;
+  margin: 15px;
+}
+.card-header {
+    align-items: center;
+    text-align: center;
+    text-transform: capitalize;
+    background-color: aqua;
+}
+
+/* Add rounded corners to the top left and the top right corner of the image
+img {
+  border-radius: 5px 5px 0 0;
+} */
+</style>
+
+
+
 {
 posts.map((post) => (
-							
-							<div class="card border-dark mb-3" style="max-width: 18rem;">
-  <div class="card-header"><span class="badge rounded-pill text-bg-info">Players Wanted</span> Header</div>
-  <div class="card-body">
-    <h5 class="card-title">Primary card title</h5>
-    <p class="card-text">{post.data.message}</p>
-	<div class="card-footer">
-		<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-	</div>
+					<a href={`/club-hub/noticeboard/${post.id}/`}>
+                    <div class="card">
+  {/* <img src="img_avatar.png" alt="Avatar" style="width:"> */}
+  <div class="container">
+    <div class="card-header"><h3>{post.data.name}</h3></div>
+    <p>{post.data.message}</p>
   </div>
-</div>
+</div>		</a>
 						))
 					}
 
